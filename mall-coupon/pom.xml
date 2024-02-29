@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.x</groupId>
-    <artifactId>mall-order</artifactId>
+    <artifactId>mall-coupon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mall-order</name>
-    <description>mall-order</description>
+    <name>mall-coupon</name>
+    <description>mall-coupon</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway-mvc</artifactId>
         </dependency>
 
         <dependency>

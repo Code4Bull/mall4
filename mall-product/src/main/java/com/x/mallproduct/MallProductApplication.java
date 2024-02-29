@@ -1,13 +1,13 @@
-package com.x.mallorder;
+package com.x.mallproduct;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MallOrderApplication {
+public class MallProductApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MallOrderApplication.class, args);
+        SpringApplication.run(MallProductApplication.class, args);
     }
 
 }
