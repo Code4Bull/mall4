@@ -1,9 +1,4 @@
 spring:
-  datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://116.62.127.19:3306/gulimall_pms
-    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       server-addr: 116.62.127.19:8848
@@ -15,6 +10,7 @@ spring:
   config:
     import:
       - nacos:mall-product.properties?refresh=true
+      - nacos:dataSource.yml?refresh=true
   application:
     name: mall-product
 mybatis-plus:
