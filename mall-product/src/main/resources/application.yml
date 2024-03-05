@@ -6,8 +6,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
+      server-addr: 116.62.127.19:8848
+      # 以下配置项必须填写
+      username: 'nacos'
+      password: 'nacos'
       discovery:
         server-addr: 116.62.127.19:8848
+  config:
+    import:
+      - nacos:mall-product.properties?refresh=true
   application:
     name: mall-product
 mybatis-plus:

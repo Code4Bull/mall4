@@ -1,7 +1,6 @@
 package com.x.mallproduct;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.x.mallproduct.MallProductApplication;
 import com.x.mallproduct.entity.BrandEntity;
 import com.x.mallproduct.service.BrandService;
 import org.junit.Test;

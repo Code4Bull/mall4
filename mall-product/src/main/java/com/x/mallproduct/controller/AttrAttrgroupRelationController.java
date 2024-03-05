@@ -6,6 +6,8 @@ import java.util.Map;
 import com.x.mallproduct.entity.AttrAttrgroupRelationEntity;
 import com.x.mallproduct.service.AttrAttrgroupRelationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,6 @@ import com.x.common.utils.PageUtils;
 import com.x.common.utils.R;
 
 
-
 /**
  * 属性&属性分组关联
  *
@@ -24,11 +25,21 @@ import com.x.common.utils.R;
  * @email czlsk62@gmail.com
  * @date 2024-03-03 22:12:16
  */
+@RefreshScope
 @RestController
-@RequestMapping("com.x.mallproduct/attrattrgrouprelation")
+@RequestMapping("mallproduct/attrattrgrouprelation")
 public class AttrAttrgroupRelationController {
     @Autowired
     private AttrAttrgroupRelationService attrAttrgroupRelationService;
+
+    @Value("${user.name}")
+    private String name;
+    @Value("${user.age}")
+    private String age;
+    @RequestMapping("/test")
+    public R test() {
+        return R.ok().put("name", name).put("age", age);
+    }
 
     /**
      * 列表

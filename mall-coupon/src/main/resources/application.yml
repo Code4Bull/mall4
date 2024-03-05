@@ -2,10 +2,14 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://116.62.127.19:3306/gulimall_
+    url: jdbc:mysql://116.62.127.19:3306/gulimall_oms
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
+      server-addr: 116.62.127.19:8848
+      # 以下配置项必须填写
+      username: 'nacos'
+      password: 'nacos'
       discovery:
         server-addr: 116.62.127.19:8848
   application:
@@ -17,3 +21,4 @@ mybatis-plus:
       id-type: auto
 server:
   port: 8090
+
