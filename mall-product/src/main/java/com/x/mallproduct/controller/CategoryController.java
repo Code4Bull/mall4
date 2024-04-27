@@ -1,6 +1,7 @@
 package com.x.mallproduct.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,6 @@ import com.x.mallproduct.service.CategoryService;
 import com.x.common.utils.PageUtils;
 import com.x.common.utils.R;
 
-
-
 /**
  * 商品三级分类
  *
@@ -25,10 +24,18 @@ import com.x.common.utils.R;
  * @date 2024-03-03 22:12:16
  */
 @RestController
-@RequestMapping("com.x.mallproduct/category")
+@RequestMapping("product/category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+    /**
+     * 多级分类列表
+     */
+    @RequestMapping("/list/tree")
+    public R treeList(){
+        List<CategoryEntity> entityList  = categoryService.listWithTree();
+        return R.ok().put("data", entityList);
+    }
 
     /**
      * 列表
@@ -73,11 +80,12 @@ public class CategoryController {
 
     /**
      * 删除
+     * RequestBody 获取请求体 必须发送 post 请求
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
-
+//		categoryService.removeByIds(Arrays.asList(catIds));
+        categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
 

@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://116.62.127.19:3306/gulimall_oms
+    password: czlsk123
+    url: jdbc:mysql://116.62.127.19:3387/gulimall_oms
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
@@ -12,6 +12,9 @@ spring:
       password: 'nacos'
       discovery:
         server-addr: 116.62.127.19:8848
+  config:
+    import:
+      - nacos:dataSource.yml?refresh=true
   application:
     name: mall-coupon
 mybatis-plus:
